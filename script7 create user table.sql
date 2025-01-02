@@ -1,0 +1,61 @@
+USE [AIMSV3]
+GO
+
+/****** Object:  Table [dbo].[Users]    Script Date: 27-12-2024 12:23:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Users](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](100) NOT NULL,
+	[LastName] [varchar](100) NOT NULL,
+	[EmailID] [varchar](100) NOT NULL,
+	[Password] [varchar](100) NOT NULL,
+	[CityID] [int] NULL,
+	[DepartmentID] [int] NULL,
+	[Permissions] [bit] NULL,
+	[Created] [date] NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[Modified] [date] NULL,
+	[ModifiedBy] [int] NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[Deleted] [date] NULL,
+	[DeletedBy] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Users_EmailID_Password] UNIQUE NONCLUSTERED 
+(
+	[EmailID] ASC,
+	[Password] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Users_FirstName_LastName] UNIQUE NONCLUSTERED 
+(
+	[FirstName] ASC,
+	[LastName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Users] ADD  CONSTRAINT [DF_Users_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_CityID] FOREIGN KEY([CityID])
+REFERENCES [dbo].[Cities] ([ID])
+GO
+
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_Users_CityID]
+GO
+
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_DepartmentID] FOREIGN KEY([DepartmentID])
+REFERENCES [dbo].[Departments] ([ID])
+GO
+
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_Users_DepartmentID]
+GO
+
+

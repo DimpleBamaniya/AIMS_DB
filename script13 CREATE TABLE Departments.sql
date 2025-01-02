@@ -1,0 +1,8 @@
+
+CREATE TABLE [dbo].[Departments] (
+    [ID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [Name] VARCHAR(255) NOT NULL,
+    [IsActive] BIT NOT NULL DEFAULT 1,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE()
+);
+GO
