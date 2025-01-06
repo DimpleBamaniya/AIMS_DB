@@ -1,7 +1,7 @@
 USE [AIMSV3]
 GO
 
-/****** Object:  Table [dbo].[Users]    Script Date: 27-12-2024 12:23:23 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 06-01-2025 12:09:17 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,6 +10,7 @@ GO
 
 CREATE TABLE [dbo].[Users](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserCode] [varchar](50) NULL,
 	[FirstName] [varchar](100) NOT NULL,
 	[LastName] [varchar](100) NOT NULL,
 	[EmailID] [varchar](100) NOT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE [dbo].[Users](
 	[IsDeleted] [bit] NOT NULL,
 	[Deleted] [date] NULL,
 	[DeletedBy] [int] NULL,
-PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK__Users__3214EC273AFCA909] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
