@@ -1,7 +1,7 @@
 USE [AIMSV3]
 GO
 
-/****** Object:  View [dbo].[vw_Users]    Script Date: 08-01-2025 13:48:35 ******/
+/****** Object:  View [dbo].[vw_Users]    Script Date: 09-01-2025 17:14:27 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,16 +9,21 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE   VIEW [dbo].[vw_Users] AS
+CREATE  OR ALTER VIEW [dbo].[vw_Users] AS
 SELECT 
     u.ID,
     u.UserCode,
     u.FirstName,
     u.LastName,
+	u.Permissions,
     d.Id AS DepartmentID,
     d.Name AS DepartmentName,
     c.ID AS CityID,
-    c.Name AS CityName
+    c.Name AS CityName,
+	u.Modified,
+	u.ModifiedBy,
+	u.Created,
+	u.CreatedBy
 FROM 
     USERS u
 LEFT JOIN 

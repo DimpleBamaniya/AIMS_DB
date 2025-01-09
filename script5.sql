@@ -41,4 +41,8 @@ REFERENCES [dbo].[Categories]([ID])
 ALTER TABLE [dbo].[Products]
 ADD CONSTRAINT [UQ_Products_CategoryID_BrandID]
 UNIQUE ([CategoryID], [BrandID]);
+
+ALTER TABLE [dbo].[Products]
+ADD [Code] VARCHAR(100) NULL; -- Adding 'Code' column as VARCHAR(100) with NULLABLE constraint
+
 GO
