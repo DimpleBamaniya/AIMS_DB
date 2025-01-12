@@ -25,7 +25,7 @@ BEGIN
         -- Calculate UseQuantity from UserProducts table
         SELECT 
             up.ProductID,
-            COUNT(up.UserProductID) AS UseQuantity
+            COUNT(up.ID) AS UseQuantity
         FROM [dbo].[UserProducts] up
         GROUP BY up.ProductID
     ) up ON p.ID = up.ProductID;
@@ -37,7 +37,7 @@ BEGIN
         -- Calculate the count of ProductID usage from UserProducts
         SELECT 
             up.ProductID,
-            COUNT(up.UserProductID) AS UsageCount
+            COUNT(up.ID) AS UsageCount
         FROM [dbo].[UserProducts] up
         GROUP BY up.ProductID
     ) up ON p.ID = up.ProductID;
