@@ -1,97 +1,95 @@
-While permission is  false
+Login page: 
+1.layout - user name and About Us
+2.where email and password fields with validation of mail formate and password length.
+3.invalid email or password
+4.user not exist.
 
-user login page 
-email validation
-password validation
+About Us Page
+1.layout - user name and Login
+2.Introduction
+3.Features
+4.Usage
+5.Contact
+6.Version-2
+7.Unit Testing button 
 
-click on submit button and if email and password validation is true than show it in red font
-if 
-1. user is not exist then alert from api
-2.password is not correct than alert from api
-3.Email is not correct than alert from api 
+Unit Testing Page
+1.layout - user name, about us and Login
+2.page wise image in grid 
+3.on click on image than image view is open and next and previous image button .
 
+User detail page :(without permission)
+1.layout - user name and logout
+2.Fields are first name,last name,city and department(view mode)
+3.Edited fields are  first name,last name,city
+4.save button to save data .
+5.Product list which is assign to the user.(not editable.)
 
-if all validation pass than redirect to detail page 
+User detail page :(with permission)
+1.layout - product management, User management, user name and logout
+2.Fields are first name,last name,city and department(view mode)
+3.Edited fields are  first name,last name,city and department
+4.All Fields are required.
+5.save button to save data .
+6.Product list which is assign to the user.
+7.Delete Product from user detail page.
+8.Add product  from user detail page.
+9. While adding product,Select product category and than refresh brand which is available.
+10.Add product and refresh product list .
+11.Add new user -Fields are first name ,last name ,Email and password
+12.All Fields are required and validation of mail format and min max length for first name ,last name,password 
+13.If user is already added than get alert thatUser is already exist.where check email and password.
 
-than city is mendetory 
-city validation 
+User List page 
+1.layout - product management,user name and logout
+2.Add user button
+3.search filter
+4.List of Users where column are 
+>UserCode (linkable) to click on usercode than user redirect on user detail page. ,
+>First Name,
+ >Last name , 
+>City ,
+>Department , 
+>Action where delete user feature .
+5.Delete user :
+> If user assigned any product than user can not deleted and pop up product list.
+> if user does not assigned any product than use be can deleted.
+6.pagination : total record, pagesize,previous page , next page and page no.
 
-user show product list which are assign them.(no action)
-and save.
+Product List page 
+1.layout - user management,user name and logout
+2.Add Product button
+3.search filter
+4.List of Product where column are 
+>Product Code
+>Brand Name,
+ >Available Quantity 
+>Used Quantity ,
+>Total Quantity , 
+>Action where delete and edit product .
+5.Delete Product :
+> If Product assigned any user than product can not deleted and pop up user list.
+> if product does not assigned any user than Product can be deleted.
+6.Edit Product :
+>Update Product quantity .
+>If user chnage Product Quantity and product quantity is less than used quantity than get alert that "Quantity should not be less than used Quantity"
+7.pagination : total record, pagesize,previous page , next page and page no.
+8.Product Category button
+9.Product Brand Button
 
-While permission is  true
+Product Detail Page (PopUp)
 
-user login page 
-email validation
-password validation
-
-click on submit button and if email and password validation is true than show it in red font
-if 
-1. user is not exist then alert from api
-2.password is not correct than alert from api
-3.Email is not correct than alert from api 
-
-
-if all validation pass than redirect to user list page 
-where admin show home, logout ,product management
-and show user list with table format and add user button .
-while click on add user button than redirect to 
-user detail page 
-
-where first name ,last name,email,password 
-mandetory all fields and validation for them 
-
-all validation is fullfill than save user 
-and alert user added successfully
-and redirect to user list where new user is added
- while click on code of any user than redirect to user detail page 
-where  city is mendetory and department is mandetory 
-city validation 
-department validation
-and save.
-if all validation pass than redirect to user list page 
-
-
-while click on product managment 
-
-user show the product list page 
-and add product button
-
-while clicking on add product button then pop will open for adding new product where user show fileds caegory ,brand and quantity
-
-validation for category and brand 
-
-added product and redirect to product list page where show new newly added product
-there are two action button edit and delete
-while user click on edit buuton than user able to change quantity of the product
-validation from api that quantity is not less than used quantity 
-
-and click on save button than redirect to product list page 
-while user click on delete button than user able to delete the product
-and alert that user deleted sucessfully
-
-if product is assign to any user than product will not delete and get pop to show which user used product.
-
-while user on product managment than user able to see user managment and home and logout on top of the page
-
-while click on user managment user redirect to user list page 
-
-user click on any user code than redirect to user detail page 
-
-where user show that user detail page and products list with delete button
-and add product button 
-
-while clicking on add product than if product is not excist than will create new and than assign to user that product
-while adding product from user page than only show category and brand field which is mandetory
-while click on save button than redirect to user detail page and refresh data and show new product is added.
-
-
-while clicking on delete button than product will be deleted forever (hard delete)
+1. Add new  product from product list page 
+>Product already exist
+2. Edit Product from Product List page
+3. Assign product from user detail page.
+>Product already assinged
+>Product category already assigned
 
 
-panding 
-alert while save or add or edit sucessmsg in alert or toaster
-api error msg like prosuct is already ther or user is already excist or anything
+Product Category
+>PopUp-Get list of Active Product Category
 
-
+Product Brand
+>Pop-up-Get list of Active Product Brand
 
